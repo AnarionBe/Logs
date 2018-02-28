@@ -26,12 +26,14 @@ tm * Logs::GetTime() {
 }
 
 void Logs::Debbug1(const char * pFichier, int ligne, const char *pDebbug,...) {
-    char buff[255];
-    va_list args;
-    va_start(args, pDebbug);
-    vsprintf(buff, pDebbug, args);
-    va_end(args);
-    cerr << "\033[31m(" << pFichier << " - " << ligne << ") " << buff << "\033[39m" << endl;
+	if(showDebbug) {
+		char buff[255];
+	    va_list args;
+	    va_start(args, pDebbug);
+	    vsprintf(buff, pDebbug, args);
+	    va_end(args);
+	    cerr << "\033[31m(" << pFichier << " - " << ligne << ") " << buff << "\033[39m" << endl;
+	}
 }
 
 void Logs::Log1(const char *pLog,...) {
