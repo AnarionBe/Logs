@@ -21,3 +21,4 @@ Constructors
   Debbug(...) -> Allow to display debbug message. Same syntax as printf()
   
   Log(...) -> Allow to write a log line. Same syntax as printf()
+  Thanks for using!
